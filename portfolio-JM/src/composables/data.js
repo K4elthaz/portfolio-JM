@@ -40,7 +40,7 @@ export function useData() {
     const fetchData = async () => {
         const baseUrl = import.meta.env.BASE_URL
 
-        const generalResponse = await fetch(baseUrl + '/data/general.json')
+        const generalResponse = await fetch(baseUrl + '../../dist/data/general.json')
         const jGeneral = await generalResponse.json()
 
         _jsonData.settings = jGeneral['settings']
@@ -49,12 +49,12 @@ export function useData() {
         _jsonData.footer = jGeneral['footer']
         _progressData.loadedFiles++
 
-        const sectionsResponse = await fetch(baseUrl + '/data/sections.json')
+        const sectionsResponse = await fetch(baseUrl + '../../dist/data/sections.json')
         const jSections = await sectionsResponse.json()
         _jsonData.sections = jSections['sections']
         _progressData.loadedFiles++
 
-        const pagesResponse = await fetch(baseUrl + '/data/pages.json')
+        const pagesResponse = await fetch(baseUrl + '../../dist/data/pages.json')
         const jPages = await pagesResponse.json()
         _jsonData.policy = jPages['policy']
         _jsonData.legal = jPages['legal']
